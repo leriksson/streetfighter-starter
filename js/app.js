@@ -35,9 +35,11 @@ function playHadouken () {
 
 	$(document).keydown(function(event){
 		if ( event.which == 88 ) {
+			nyanSample();
 			$('.ryu-still').hide();
 			$('.ryu-ready').hide();
 			$('.ryu-cool').show();
+			$('.main-rain').css( "background-image", "url('http://www.gifs.net/Animation11/Nature/Rainbows/Rainbow_2.gif')" );
 		}
 	});
 
@@ -45,7 +47,11 @@ function playHadouken () {
 		if ( event.which == 88 ) {
 			$('.ryu-cool').hide();
 			$('.ryu-still').show();
+			// $('.main-rain').css( "background-image", "none" );
 		}
 	});
 
-	$('.main').css('background','')
+function nyanSample () {
+	$('#nyan-sample')[0].volume = 0.2;
+	$('#nyan-sample')[0].play();
+}
